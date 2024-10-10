@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu3kgmsopu1b1"]
+
+[ext_resource type="Texture2D" uid="uid://b53qtsff04wc1" path="res://Assets/sprites.png" id="1_5hhwb"]
+[ext_resource type="Script" path="res://Scripts/blue_car.gd" id="1_bi28a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ojjg"]
+size = Vector2(7, 16)
+
+[node name="BlueCar" type="Area2D"]
+script = ExtResource("1_bi28a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("1_5hhwb")
+region_enabled = true
+region_rect = Rect2(5.29668, 79.4897, 11.6995, 16.7056)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_2ojjg")
