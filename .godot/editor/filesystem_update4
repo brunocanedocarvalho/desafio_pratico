@@ -1,6 +1,10 @@
-res://Scenes/game.tscn
 res://Scenes/Player.tscn
+res://Scripts/blue_car.gd
+res://Scripts/player.gd
+res://Scenes/game.tscn
 res://Scenes/fuel.tscn
 res://Scenes/blue_car.tscn
 res://Scenes/finish_line.tscn
 res://Scripts/finish_line.gd
+res://Scripts/fuel.gd
+res://Scripts/panel.gd

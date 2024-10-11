@@ -1,17 +1,14 @@
 extends CharacterBody2D
 
-# Constantes para controle de movimento e knockback
 const SPEED = 70.0
 const KNOCKBACK_STRENGTH_WALL = 50.0  # Knockback ao colidir com paredes
 const KNOCKBACK_STRENGTH_CAR = 1000.0  # Knockback ao colidir com carros
 const KNOCKBACK_DECAY = 500.0  # A taxa de redução do knockback
 
-# Variáveis de estado do carro
 var is_control_disabled = false
 var knockback_force = Vector2.ZERO
 var is_colliding_with_wall = false
 
-# Referências para elementos do jogo
 var fuel_counter: Label
 var timer: Timer
 var wall_timer: Timer
@@ -35,29 +32,22 @@ func _process(delta: float) -> void:
 	else:
 		_process_movement()
 
-	# Mover o carro com base na física
 	move_and_slide()
 
-# Lógica do movimento básico do jogador (somente quando o controle está ativo)
 func _process_movement() -> void:
-	# Obtém a direção do jogador (esquerda/direita)
 	var direction := Input.get_axis("ui_left", "ui_right")
 
-	# Aplica a velocidade baseada na direção do input
 	if direction != 0:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	# Reseta a velocidade no eixo Y para impedir movimento vertical
 	velocity.y = 0
 
-	# Checa colisões com as paredes
 	_check_wall_collision()
 
 # Lógica de colisão com paredes
 func _check_wall_collision() -> void:
-	# Verifica se o carro está em contato com uma parede e ainda não está lidando com colisão
 	if is_on_wall() and not is_colliding_with_wall:
 		is_control_disabled = true
 		is_colliding_with_wall = true
