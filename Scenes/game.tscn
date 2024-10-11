@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4v5fwmevnj7n"]
+[gd_scene load_steps=10 format=3 uid="uid://c4v5fwmevnj7n"]
 
 [ext_resource type="PackedScene" uid="uid://dhfknikoqnvyf" path="res://Scenes/Player.tscn" id="1_p5svh"]
 [ext_resource type="Texture2D" uid="uid://b53qtsff04wc1" path="res://Assets/sprites.png" id="2_43ury"]
 [ext_resource type="PackedScene" uid="uid://55smwxpyoohp" path="res://Scenes/fuel.tscn" id="2_mt5du"]
 [ext_resource type="PackedScene" uid="uid://bu3kgmsopu1b1" path="res://Scenes/blue_car.tscn" id="4_r188w"]
+[ext_resource type="PackedScene" uid="uid://jn52oic2150y" path="res://Scenes/finish_line.tscn" id="6_0jpi3"]
 [ext_resource type="Script" path="res://Scripts/panel.gd" id="6_najhn"]
+[ext_resource type="Script" path="res://Scripts/finish_line.gd" id="7_q2esp"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ent4k"]
 normal = Vector2(1, 0)
@@ -90,5 +92,9 @@ horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="Panel"]
 autostart = true
+
+[node name="finish line" parent="." instance=ExtResource("6_0jpi3")]
+position = Vector2(0, -703)
+script = ExtResource("7_q2esp")
 
 [connection signal="timeout" from="Panel/Timer" to="Panel" method="_on_timer_timeout"]

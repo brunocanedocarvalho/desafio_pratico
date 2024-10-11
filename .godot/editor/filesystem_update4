@@ -1,8 +1,6 @@
 res://Scenes/game.tscn
-res://Scripts/player.gd
 res://Scenes/Player.tscn
 res://Scenes/fuel.tscn
 res://Scenes/blue_car.tscn
-res://Scripts/blue_car.gd
-res://Scripts/fuel.gd
-res://Scripts/panel.gd
+res://Scenes/finish_line.tscn
+res://Scripts/finish_line.gd

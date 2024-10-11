@@ -10,6 +10,8 @@ size = Vector2(7, 13)
 script = ExtResource("1_shanm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visibility_layer = 2
+z_index = 1
 position = Vector2(1, 0)
 texture = ExtResource("1_nteuy")
 region_enabled = true

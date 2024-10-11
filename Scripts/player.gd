@@ -3,7 +3,7 @@ extends CharacterBody2D
 # Constantes para controle de movimento e knockback
 const SPEED = 70.0
 const KNOCKBACK_STRENGTH_WALL = 50.0  # Knockback ao colidir com paredes
-const KNOCKBACK_STRENGTH_CAR = 3000.0  # Knockback ao colidir com carros
+const KNOCKBACK_STRENGTH_CAR = 1000.0  # Knockback ao colidir com carros
 const KNOCKBACK_DECAY = 500.0  # A taxa de redução do knockback
 
 # Variáveis de estado do carro
